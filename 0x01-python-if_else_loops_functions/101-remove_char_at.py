@@ -7,4 +7,4 @@ def remove_char_at(str, n):
         new_str = ''.join(ls)
         return new_str
     else:
-        return(str)
+        return str
