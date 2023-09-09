@@ -4,7 +4,14 @@ import sys
 prog_n = sys.argv[0]
 args = sys.argv[1:]
 number = len(args)
-if len != 1:
+
+if number == 1:
     print("{} argument:".format(number))
     for arg in args:
         print("{}: {}".format(number, arg))
+elif number > 1:
+    print("{} argument:".format(number))
+    for i, arg in enumerate(args, start=1):
+        print("{}: {}".format(i, arg))
+else:
+    print("{} arguments.".format(number))
