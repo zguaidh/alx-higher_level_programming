@@ -10,7 +10,7 @@ if number == 1:
     for arg in args:
         print("{}: {}".format(number, arg))
 elif number > 1:
-    print("{} argument:".format(number))
+    print("{} arguments:".format(number))
     for i, arg in enumerate(args, start=1):
         print("{}: {}".format(i, arg))
 else:
