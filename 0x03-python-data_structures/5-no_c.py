@@ -8,5 +8,6 @@ def no_c(my_string):
     for elem in ls:
         if elem == 'c' or elem == 'C':
             ls.remove(elem)
+    ls = [char for char in ls if char not in ['c', 'C']]
     STR = ''.join(ls)
     return STR
