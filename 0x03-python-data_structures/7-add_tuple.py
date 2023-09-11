@@ -23,8 +23,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
         tu = x, y
         return tu
     else:
-        a, b = tuple_a
-        c, d = tuple_b
+        a, b = tuple_a[:2]
+        c, d = tuple_b[:2]
         x = a + c
         y = d + b
         tu = x, y
