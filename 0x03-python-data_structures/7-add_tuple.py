@@ -40,9 +40,9 @@ def add_tuple(tuple_a=(), tuple_b=()):
         return tu
 
 
-#def add_tuple(tuple_a=(), tuple_b=()):
-#    a = tuple_a[:2]
-#    b = tuple_b[:2]
-#    x = sum(a) + sum(b)
-#    y = tuple_a.get(1, 0) + tuple_b.get(1, 0)
-#    return (x, y)
+'#def add_tuple(tuple_a=(), tuple_b=()):'
+'#    a = tuple_a[:2]'
+'#    b = tuple_b[:2]'
+'#    x = sum(a) + sum(b)'
+'#    y = tuple_a.get(1, 0) + tuple_b.get(1, 0)'
+'#    return (x, y)'
