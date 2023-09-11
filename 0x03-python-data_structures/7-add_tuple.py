@@ -5,9 +5,15 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if length_a == 0 and length_b == 0:
         return (0, 0)
     elif length_a == 0:
-        return tuple_b[:2]
+        if lenght_b == 1:
+            return tuple_b[:1]
+        else:
+            return tuple_b[:2]
     elif length_b == 0:
-        return tuple_a[:2]
+        if length_a == 1:
+            return tuple_a[:1]
+        else:
+            return tuple_a[:2]
     elif length_a == 1:
         a = tuple_a[0]
         c, d = tuple_b[:2]
