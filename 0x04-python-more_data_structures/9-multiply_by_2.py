@@ -4,6 +4,7 @@ def val_mul(x):
 
 
 def multiply_by_2(a_dictionary):
-    for key, value in a_dictionary.items():
-        a_dictionary[key] = val_mul(value)
-    return a_dictionary
+    dic = dict(a_dictionary)
+    for key, value in dic.items():
+        dic[key] = val_mul(value)
+    return dic
