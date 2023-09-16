@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
+    if replace not in my_list:
+        return my_list
     copy = my_list[:]
     idx = copy.index(search)
     copy.pop(idx)
