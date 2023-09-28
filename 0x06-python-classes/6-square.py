@@ -31,6 +31,7 @@ class Square:
     def position(self):
         return self.__position
     """method to set the position attribure"""
+    @position.setter
     def position(self, value):
         if type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -42,6 +43,7 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         if len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
     """method that prints in stdout the square with the character #"""
     def my_print(self):
         if self.__size == 0:
