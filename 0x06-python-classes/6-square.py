@@ -38,6 +38,10 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         if type(value[0]) or type(value[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
     """method that prints in stdout the square with the character #"""
     def my_print(self):
         if self.__size == 0:
@@ -47,4 +51,4 @@ class Square:
                 print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
-            print()
+            print(i)
