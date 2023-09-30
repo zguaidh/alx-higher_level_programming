@@ -1,20 +1,15 @@
 #!/usr/bin/python3
-""" module for addition function: the add_ineger method """
+""" module for addition function: the add_ineger method 
+    - a and b must be integers or floats, otherwise raise a TypeError
+    - a and b must be first casted to integers if they are float
+    - Returns an integer: the addition of a and b
+"""
 
 
 def add_integer(a, b=98):
     """ method that adds 2 integers.
-
-    args:
         a: the first integer.
-        b: the second integer, default 98.
-
-    Raises:
-        TypeError or exception: If a or b are not integers, float.
-
-    Returns:
-        The sum of the two integers
-    """
+        b: the second integer, default 98."""
 
     if isinstance(a, float):
         a = int(a)
