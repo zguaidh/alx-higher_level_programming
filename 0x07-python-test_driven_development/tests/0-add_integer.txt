@@ -1,0 +1,54 @@
+The ''0-add_integer'' module
+=====================================
+
+Using ''0-add_integer''
+-----------------------
+
+Import module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test basic:
+	>>> add_integer(2, 3)
+	5
+
+Test firstint:
+	>>> add_integer("hi", 3)
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	TypeError: a must be an integer
+
+Test secondint:
+	>>> add_integer(2, "hi")
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	TypeError: b must be an integer
+
+Test both strings:
+	>>> add_integer("hi", "there")
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	TypeError: a must be an integer
+
+Test empty input:
+	>>> add_integer("", "")
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	TypeError: a must be an integer
+
+Test first parametres float:
+	>>> add_integer(2.5, 3)
+	5
+
+Test second parametre float:
+	>>> add_integer(2, 3.5)
+	5
+
+Test both floats:
+	>>> add_integer(2.5, 3.5)
+	5
+
+Test just spaces:
+	>>> add_integer(" ", " ")
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	TypeError: a must be an integer
