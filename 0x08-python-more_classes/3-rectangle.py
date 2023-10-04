@@ -55,7 +55,7 @@ class Rectangle:
         """returns the rectangle with the character #"""
         ret_str = ""
         if self.__width != 0 and self.__height != 0:
-            ret_str += "\n"
             for i in range(self.__height):
-                ret_str.join("#" * self.__width)
+                ret_str += "#" * self.__width
+                ret_str += "\n"
         return ret_str
