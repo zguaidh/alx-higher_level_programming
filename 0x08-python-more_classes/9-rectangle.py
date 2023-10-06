@@ -91,5 +91,6 @@ class Rectangle:
         """
         returns a new Rectangle instance with width == height == size
         """
-        if isinstance(size, int) and size >= 0:
-            return cls(size, size)
+        if not isinstance(size, int) and size < 0:
+            size = 0
+        return cls(size, size)
