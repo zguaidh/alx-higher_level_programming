@@ -1,0 +1,27 @@
+The ''5-text_indentation'' module
+================================
+
+using ''5-text_indentation''
+---------------------------
+
+import module:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test text:
+	>>> text_indentation("Hello world")
+	Hello world
+
+Test newline :
+	>>> text_indentation("Hello\n\n")
+	Hello
+	<BLANKLINE>
+
+Test all delimeters:
+	>>> text_indentation("Hello . world ? i'am : Habiba")
+	Hello.
+	<BLANKLINE>
+	world?
+	<BLANKLINE>
+	i'am:
+	<BLANKLINE>
+	Habiba
