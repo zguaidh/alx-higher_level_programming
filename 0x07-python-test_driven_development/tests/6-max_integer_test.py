@@ -30,6 +30,14 @@ class TestMaxInteger(unittest.TestCase):
         """unitest for max integer"""
         self.assertEqual(max_integer([2, 4, 8, 10]), 10)
 
+    def test_pos_and_neg(self):
+        """unitest for max integer"""
+        self.assertEqual(max_integer([-23, 58, 24, 100, 88]), 100)
+
+    def test_all_neg(self):
+        """unitest for max integer"""
+        self.assertEqual(max_integer([-33, -32, -41, -100, -50]), -32)
+
 
 if __name__ == '__main__':
     unittest.main()
