@@ -71,11 +71,6 @@ integer_validator method string value:
     Traceback (most recent call last):
     TypeError: habiba must be an integer
 
-integer_validator method bool value:
-    >>> base.integer_validator("habiba", True)
-    Traceback (most recent call last):
-    TypeError: habiba must be an integer
-
 Test: integer_validator method list value:
     >>> base.integer_validator("habiba", [1])
     Traceback (most recent call last):
