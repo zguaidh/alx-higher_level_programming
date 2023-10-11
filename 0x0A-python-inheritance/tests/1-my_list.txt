@@ -52,3 +52,10 @@ Test append:
     >>> my_list.append(1)
     >>> my_list
     [1]
+
+Test Original list unchanged:
+    >>> my_list = MyList([10, 1, -10, 100, 0])
+    >>> my_list.print_sorted()
+    [-10, 0, 1, 10, 100]
+    >>> my_list
+    [10, 1, -10, 100, 0]
