@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import json
 """Module for to_json_string function"""
+
+import sys
 
 
 def to_json_string(my_obj):
