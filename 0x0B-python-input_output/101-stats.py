@@ -38,7 +38,7 @@ try:
 
         if lines_num % 10 == 0:
             print_stdout()
-        print_stdout()
+    print_stdout()
 
 except KeyboardInterrupt:
     print_stdout()
