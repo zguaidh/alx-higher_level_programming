@@ -18,6 +18,7 @@ status_code = {
         '500': 0,
         }
 
+
 def print_stdout():
     """method that prints the result after computing metrics"""
     print("File size: {}".format(total_size))
