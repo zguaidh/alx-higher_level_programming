@@ -31,7 +31,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
-       pass
+        pass
 
     @staticmethod
     def from_json_string(json_string):
@@ -42,5 +42,16 @@ class Base:
         else:
             return json.loads(json_string)
 
-
-
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Square:
+            dummy = Square(2)
+        elif cls is Rectangle:
+            dummy = Rectangle(2, 2)
+        else:
+            dummy = None
+        dummy.update(**dictionary)
+        return dummy
