@@ -2,6 +2,9 @@
 """ Module for a Base class"""
 
 
+import json
+
+
 class Base:
     """ A representation of the “base” of all other classes in this project.
     The goal of it is to manage id attribute in all your future classes
@@ -16,3 +19,10 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        """returns the JSON string representation of list_dictionaries"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return []
+        else:
+            return json.dumps(list_dictionaries)
