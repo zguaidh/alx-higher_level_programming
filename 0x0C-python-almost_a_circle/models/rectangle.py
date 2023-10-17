@@ -71,7 +71,9 @@ class Rectangle(Base):
 
     def display(self):
         """method that prints the rectangle to stdout using #"""
-        pass
+        dis = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(dis, end="")
 
     def __str__(self):
         """overrides the __str__ method"""
