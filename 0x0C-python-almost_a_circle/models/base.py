@@ -47,10 +47,10 @@ class Base:
         """returns an instance with all attributes already set"""
         from models.rectangle import Rectangle
         from models.square import Square
-        if cls is Square:
-            dummy = Square(2)
-        elif cls is Rectangle:
-            dummy = Rectangle(2, 2)
+        if cls.__name == "Square":
+            dummy = Square(1)
+        elif cls.__name__ == "Rectangle":
+            dummy = Rectangle(1, 1)
         else:
             dummy = None
         dummy.update(**dictionary)
