@@ -49,9 +49,10 @@ class Base:
         from models.square import Square
         if cls.__name == "Square":
             dummy = cls(1)
+            dummy.update(**dictionary)
         elif cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
+            dummy.update(**dictionary)
         else:
             dummy = None
-        dummy.update(**dictionary)
         return dummy
