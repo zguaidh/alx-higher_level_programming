@@ -14,3 +14,14 @@ class Square(Rectangle):
         """inform the user about the information of the square"""
         return "[Square] ({}) {}/{} - {}".\
             format(self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """ The getter for size(width) of the square"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """The size setter"""
+        self.width = value
+        self.height = value
