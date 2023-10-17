@@ -79,3 +79,24 @@ class Rectangle(Base):
         """overrides the __str__ method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".\
             format(self.id, self.x, self.y, self.width, self.height)
+
+    def update_0(self, id=None, width=None, height=None, x=None, y=None):
+        """assigns an argument to each attribute using *args"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """updating the public method def update(self, *args):
+        **kwargs must be skipped if *args exists and is not empty"""
+        if args:
+            self.update_0(*args)
+        elif kwargs:
+            self.update_0(**kwargs)
