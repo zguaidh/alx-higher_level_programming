@@ -72,3 +72,8 @@ class Rectangle(Base):
     def display(self):
         """method that prints the rectangle to stdout using #"""
         pass
+
+    def __str__(self):
+        """overrides the __str__ method"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.x, self.y, self.width, self.height)
