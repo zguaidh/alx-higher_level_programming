@@ -11,11 +11,11 @@ import io
 class TestRectangle(unittest.TestCase):
     '''Tests the Base class.'''
 
-    def set_Up(self):
+    def setUp(self):
         '''Imports module, instantiates class'''
         Base._Base__nb_objects = 0
 
-    def clean_Up(self):
+    def tearDown(self):
         '''Cleans up after each test_method.'''
         pass
 
