@@ -1,0 +1,65 @@
+The ''Text identation'' module
+==============================
+
+Using ''text_indentation''
+-------------------------
+
+Import function:
+
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Test basic:
+	>>> text_indentation('habiba.zd')
+	habiba.
+	<BLANKLINE>
+	zd
+
+Test text with space:
+	>>> text_indentation('habiba.         zd')
+	habiba.
+	<BLANKLINE>
+	zd
+
+Test with two spaces and dots:
+	>>> text_indentation('habiba      .        zd.')
+	habiba      .
+	<BLANKLINE>
+	zd.
+
+Test with two dots:
+	>>> text_indentation('habiba..zd')
+	habiba.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	zd
+
+Test with ":" :
+	>>> text_indentation('habiba:zd')
+	habiba:
+	<BLANKLINE>
+	zd
+
+Test with ":" and ".":
+	>>> text_indentation('habiba      :        zd.')
+	habiba      :
+	<BLANKLINE>
+	zd.
+
+Test with "?":
+	>>> text_indentation('habiba.zd?')
+	habiba.
+	<BLANKLINE>
+	zd?
+
+Test with "?" and space:
+	>>> text_indentation('habiba?       zd')
+	habiba?
+	<BLANKLINE>
+	zd
+
+Test arg not text:
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string

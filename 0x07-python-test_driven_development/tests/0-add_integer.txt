@@ -11,12 +11,28 @@ Test Basic:
 	>>> add(5, 5)
 	10
 
-Test negative:
+Test 1st arg negative int:
 	>>> add(-5, 10)
 	5
 
-Test float:
+Test 2nd arg negative int:
+	>>> add(10, -5)
+	5
+
+Test both args negative:
+	>>> add(-5, -5)
+	-10
+
+Test 1st arg float:
 	>>> add(5.5, 5)
+	10
+
+Test 2nd arg float:
+	>>> add(5, 5.5)
+	10
+
+Test both floats:
+	>>> add(5.5, 5.5)
 	10
 
 Test negative with float:
@@ -27,13 +43,17 @@ Test one input:
 	>>> add(5)
 	103
 
-Test 2nd string:
+Test default 2nd arg:
+	>>> add(0)
+	98
+
+Test 2nd arg string:
 	>>> add(5, "Hi")
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
 
-Test 1st string:
+Test 1st arg string:
 	>>> add("Hi", 5)
 	Traceback (most recent call last):
 		...
@@ -62,3 +82,33 @@ Test 2nd arg is a list:
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+Test one float:
+    >>> add(5.9)
+    103
+
+Test one negative float:
+    >>> add(-5.9)
+    93
+
+Test two big integers:
+    >>> add(9999999999, 9999999999)
+    19999999998
+
+Test infinity:
+    >>> add(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    	...
+    OverflowError: cannot convert float infinity to integer
+
+Test nan:
+    >>> add(0, float('nan'))
+    Traceback (most recent call last):
+    	...
+    ValueError: cannot convert float NaN to integer
+
+Test both args invalid:
+    >>> add(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer

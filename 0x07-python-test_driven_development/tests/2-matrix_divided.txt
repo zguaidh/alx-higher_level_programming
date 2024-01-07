@@ -1,0 +1,97 @@
+The ''2-matrix_divided.txt'' module
+===================================
+
+Using ''matrix_divided''
+------------------------
+
+Import function:
+	>>> m_div = __import__('2-matrix_divided').matrix_divided
+
+Test Basic:
+	>>> m_div([[4, 6, 8], [12, 20, 10]], 2)
+	[[2.0, 3.0, 4.0], [6.0, 10.0, 5.0]]
+
+Test the initial matrix after the division:
+	>>> m = [[4, 6, 8], [12, 20, 10]]
+	>>> m_div(m, 2)
+	[[2.0, 3.0, 4.0], [6.0, 10.0, 5.0]]
+	>>> m
+	[[4, 6, 8], [12, 20, 10]]
+
+Test list with element non integer or float:
+	>>> m_div([[4, 6, 8], [12, "Hi", 10]], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test None instead of matrix:
+	>>> m_div(none, 2)
+	Traceback (most recent call last):
+		...
+	NameError: name 'none' is not defined
+
+Test str instead of matrix:
+	>>> m_div("Hi", 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test empty list instead of matrix:
+	>>> m_div([], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Empty matrix:
+	>>> m_div([[]], 2)
+	[[]]
+
+Test matrix with one element:
+	>>> m_div([[4]], 2)
+	[[2.0]]
+
+Test matrix with two size defferent lists:
+	>>> m_div([[2, 4, 6, 8], [2, 4, 6]], 2)
+	Traceback (most recent call last):
+		...
+        TypeError: Each row of the matrix must have the same size
+
+Test div float:
+	>>> m_div([[2, 4, 6], [4, 6, 8]], 1.5)
+	[[1.33, 2.67, 4.0], [2.67, 4.0, 5.33]]
+
+Test div negative int:
+	>>> m_div([[4, 6, 8], [12, 20, 10]], -2)
+	[[-2.0, -3.0, -4.0], [-6.0, -10.0, -5.0]]
+
+Test div negative float:
+	>>> m_div([[2, 4, 6], [4, 6, 8]], -1.5)
+	[[-1.33, -2.67, -4.0], [-2.67, -4.0, -5.33]]
+
+Test div not a float or int:
+	>>> m_div([[2, 4, 6, 8], [2, 4, 6, 10]], "Hi")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+Test div equal 0:
+	>>> m_div([[2, 4, 6, 8], [2, 4, 6, 10]], 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
+
+Test div nan:
+	>>> m_div([[2, 4, 8], [4, 6, 8]], float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
+
+test div infinity:
+	>>> m_div([[2, 4, 8], [4, 6, 8]], float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test if the returned matrix is rounded to 2 dec:
+
+Test function with no args:
+	>>> m_div()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
