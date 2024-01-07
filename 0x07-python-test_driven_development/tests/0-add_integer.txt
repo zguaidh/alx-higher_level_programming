@@ -1,0 +1,64 @@
+The ''0-add_integer'' module
+==========================
+
+Using ''add_integer''
+-------------
+
+Import function:
+	>>> add = __import__('0-add_integer').add_integer
+
+Test Basic:
+	>>> add(5, 5)
+	10
+
+Test negative:
+	>>> add(-5, 10)
+	5
+
+Test float:
+	>>> add(5.5, 5)
+	10
+
+Test negative with float:
+	>>> add(-5, 10.5)
+	5
+
+Test one input:
+	>>> add(5)
+	103
+
+Test 2nd string:
+	>>> add(5, "Hi")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Test 1st string:
+	>>> add("Hi", 5)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test both strings:
+	>>> add("Hi", "Biba")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test 'None':
+	>>> add(None)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test 1st argument is a list:
+	>>> add([1, 2, 3], 1)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Test 2nd arg is a list:
+	>>> add(1, [1, 2, 3])
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
