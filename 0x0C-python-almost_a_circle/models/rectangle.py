@@ -41,7 +41,7 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    def y(self, value):
+    def y(self):
         """set & get the value of y of the Rectangle"""
         return self.__y
 
