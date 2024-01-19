@@ -94,3 +94,18 @@ class Rectangle(Base):
             print()
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
+
+    def update(self, *args):
+        """ public method:
+        assigns an argument to each attribute
+        """
+        if args[0]:
+            self.id = args[0]
+        if len(args) > 1:
+            self.__width = args[1]
+        if len(args) > 2:
+            self.__height = args[2]
+        if len(args) > 3:
+            self.__x = args[3]
+        if len(args) > 4:
+            self.__y = args[4]
