@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for the Base class"""
 import json
+import csv
 
 
 class Base:
@@ -45,13 +46,13 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         if cls is Rectangle:
-            new = Rectangle(1, 1)
+            ins = Rectangle(1, 1)
         elif cls is Square:
-            new = Square(1)
+            ins = Square(1)
         else:
-            new = None
-        new.update(**dictionary)
-        return new
+            ins = None
+        ins.update(**dictionary)
+        return ins
 
     @classmethod
     def load_from_file(cls):
@@ -81,4 +82,22 @@ class Base:
             writer = csv.writer(f)
             writer.writerows(list_objs)
 
-
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads from csv file"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        objs = []
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                row = [int(r) for r in row]
+                if cls is Rectangle:
+                    dic = {"id": row[0], "width": row[1], "height": row[2],
+                         "x": row[3], "y": row[4]}
+                else:
+                    dic = {"id": row[0], "size": row[1],
+                         "x": row[2], "y": row[3]}
+                objs.append(cls.create(**dic))
+        return objs
