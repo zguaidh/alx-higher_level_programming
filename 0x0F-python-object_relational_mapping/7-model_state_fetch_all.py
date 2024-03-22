@@ -4,7 +4,7 @@
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State
 import sys
 
 if __name__ == "__main__":
@@ -14,5 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
+    for state in session.query(State).all():
         print("{}: {}".format(state.id, state.name))
+
+
+    session.close()
