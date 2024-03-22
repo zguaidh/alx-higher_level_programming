@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM states WHERE name=%s
-                ORDER BY id", (st_name,))
+                ORDER BY id", (st_name, ))
     states = cur.fetchall()
 
     for state in states:
