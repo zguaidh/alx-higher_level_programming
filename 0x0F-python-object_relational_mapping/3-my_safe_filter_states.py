@@ -17,8 +17,8 @@ if __name__ == "__main__":
                            user=username, passwd=password, db=db_name)
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name=%s
-                ORDER BY id", (st_name, ))
+    cur.execute("SELECT id, name FROM states WHERE BINARY name=%s
+                ORDER BY id", (st_name,))
     states = cur.fetchall()
 
     for state in states:
