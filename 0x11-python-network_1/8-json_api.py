@@ -19,11 +19,10 @@ if __name__ == '__main__':
     response = requests.get(url, params=params)
     try:
         data = response.json()
-        if isinstance(eval(data), dict):
-            if data:
-                for user in data:
-                    print(f"[{user['id']}] {user['name']}")
-            else:
-                print('No result')
+        if data:
+            for user in data:
+                print(f"[{user['id']}] {user['name']}")
+        else:
+            print('No result')
     except Exception:
         print('Not a valid JSON')
