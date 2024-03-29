@@ -20,8 +20,7 @@ if __name__ == '__main__':
     try:
         data = response.json()
         if data:
-            for user in data:
-                print(f"[{user['id']}] {user['name']}")
+            print(f"[{data['id']}] {data['name']}")
         else:
             print('No result')
     except Exception:
