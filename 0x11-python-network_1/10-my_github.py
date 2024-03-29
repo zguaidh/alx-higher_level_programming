@@ -14,7 +14,7 @@ if __name__ == '__main__':
     username = sys.argv[1]
     password = sys.argv[2]
     response = requests.get(url, auth=(username, password))
-    data = reponse.json()
+    data = response.json()
     if 'id' in data:
         print(f"{data['id']}")
     else:
