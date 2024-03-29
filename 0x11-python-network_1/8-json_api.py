@@ -16,7 +16,7 @@ if __name__ == '__main__':
     else:
         params = {'q': sys.argv[1]}
 
-    response = requests.get(url, params=params)
+    response = requests.get(url, data=params)
     try:
         data = response.json()
         if data:
