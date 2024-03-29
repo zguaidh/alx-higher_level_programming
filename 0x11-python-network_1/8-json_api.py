@@ -25,7 +25,5 @@ if __name__ == '__main__':
                     print(f"[{user['id']}] {user['name']}")
             else:
                 print('No result')
-        else:
-            print('Not a valid JSON')
     except Exception:
-        pass
+        print('Not a valid JSON')
