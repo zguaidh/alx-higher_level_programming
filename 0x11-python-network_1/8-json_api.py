@@ -14,17 +14,18 @@ if __name__ == '__main__':
     if len(sys.argv) <= 1:
         params = {'q': ""}
     else:
-
         params = {'q': sys.argv[1]}
+
     response = requests.get(url, data=params)
-    data = response.json()
-    if data:
+    try:
+        data = response.json()
         if isinstance(eval(data), dict):
-            for user in data:
-                print(f"[{user['id']}] {user['name']}")
+            if data:
+                for user in data:
+                    print(f"[{user['id']}] {user['name']}")
+            else:
+                print('No result')
         else:
             print('Not a valid JSON')
-
-    else:
-        print('No result')
-
+    except Exception:
+        pass
