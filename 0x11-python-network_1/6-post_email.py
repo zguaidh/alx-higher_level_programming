@@ -13,6 +13,6 @@ import sys
 if __name__ == '__main__':
     url = sys.argv[1]
     email = sys.argv[2]
-    data = ('email=' + email).encode('utf-8')
-    response = requests.get(url, data=data)
+    params = {'email': email}
+    response = requests.get(url, params=params)
     print(response.text)
