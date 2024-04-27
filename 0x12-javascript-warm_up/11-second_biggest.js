@@ -1,23 +1,23 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
-function max(array) {
-  if (array.length === 1 || array.length === 0) {
+function sc_max(array) {
+  if (array.length <= 1) {
     return 0;
   } else {
-    let max = array[0];
-    for (let i = 1; i <= array.length - 1; i++) {
-      if (max < array[i]) {
-        max = array[i];
+    let max = parseInt(array[0]);
+    for (let i = 1; i < array.length; i++) {
+      if (max < parseInt(array[i])) {
+        max = parseInt(array[i]);
       }
     }
-    let sc = 0;
-    for (let j = 0; j <= array.length - 1; j++) {
-      if ( array[j] < max && array[j] > sc) {
-        sc = array[j];
+    let sc = Number.MIN_SAFE_INTEGER;
+    for (let j = 0; j < array.length; j++) {
+      if ( parseInt(array[j]) < max && parseInt(array[j]) >= sc) {
+        sc = parseInt(array[j]);
       }
+    }
     return parseInt(sc);
-    }
   }
 }
-const arg = argv.slice(2);
-console.log(max (arg));
+const array = argv.slice(2);
+console.log(sc_max (array));
