@@ -12,8 +12,8 @@ function max(array) {
     }
     let sc = 0;
     for (let j = 0; j <= array.length - 1; j++) {
-      if ( array[i] < max && array[i] > sc) {
-        sc = array[i];
+      if ( array[j] < max && array[j] > sc) {
+        sc = array[j];
       }
     return parseInt(sc);
     }
