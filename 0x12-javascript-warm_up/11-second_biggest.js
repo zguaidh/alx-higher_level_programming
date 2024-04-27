@@ -10,7 +10,7 @@ function max(array) {
         max = array[i];
       }
     }
-    return max;
+    return parseInt(max);
   }
 }
 const array = argv.slice(2);
