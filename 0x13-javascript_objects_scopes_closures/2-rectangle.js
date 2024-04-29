@@ -2,8 +2,7 @@
 class Rectangle {
   constructor (w, h) {
     if (!Number.isInteger(w) || w <= 0 || !Number.isInteger(h) || h <= 0) {
-      this.width;
-      this.height;
+      return {};
     } else {
       this.width = w;
       this.height = h;
