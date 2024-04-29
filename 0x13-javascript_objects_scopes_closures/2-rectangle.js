@@ -1,8 +1,8 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    if (!Number.isInteger(w) || w <= 0 || !Number.isInteger(h) || h <= 0) {
-    let anotherEmptyObject = new Object();
+    if (isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+      return null;
     } else {
       this.width = w;
       this.height = h;
