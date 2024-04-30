@@ -14,7 +14,7 @@ class Square extends BSquare {
       }
     } else {
       for (let j = 0; j < this.size; j++) {
-        console.log(c.repeat(this.size));
+        console.log(`${c}`.repeat(this.size));
       }
     }
   }
