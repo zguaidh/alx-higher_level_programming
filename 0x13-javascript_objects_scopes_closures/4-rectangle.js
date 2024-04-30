@@ -22,8 +22,8 @@ class Rectangle {
   }
 
   double () {
-    this.width = this.width * 2;
-    this.height = this.height * 2;
+    this.width = this.width.repeat(2);
+    this.height = this.height.repeat(2);
   }
 }
 module.exports = Rectangle;
